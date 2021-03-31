@@ -1,0 +1,166 @@
+GET: /users/getAllUsers
+
+GET: /users/getUser/{userId}
+
+POST: /users/addUser
+{
+    "userId":"U118",
+    "password":"User@123",
+    "role":"USER"
+}
+
+DELETE: /users/deleteUser/{userId}
+
+POST: /users/signIn
+{
+    "userId":"U118",
+    "password":"Naveen@123"
+}
+
+PUT: /user/signUp
+{
+    "userId":"U118",
+    "key":"User@123",
+    "createPassword":"Naveen@2k",
+    "confirmPassword":"Naveen@2k"
+}
+
+PUT: /users/changePassword
+{
+    "userId":"U118",
+    "currentPassword":"Naveen@2k",
+    "newPassword":"Naveen@123",
+    "confirmPassword":"Naveen@123"
+}
+========================================
+
+
+GET: /customers/getAllCustomers
+
+GET: /customers/getCustomer/{userId}
+
+POST: /customers/addCustomer/{userId}
+    {
+        "userName": "Venkata Sai Reddy",
+        "email": "venkatasai148@gmail.com",
+        "contactNo": "9207388239",
+        "dob": "1999-10-18",
+        "address": {
+            "doorNo": "10-10A",
+            "street": "kvb",
+            "area": "Jubli hills",
+            "city": "Hydrabad",
+            "state": "Telangana",
+            "pincode": 500055
+        }
+    }
+PUT: /customers/updateCustomer/{userId}
+
+
+===================================================
+
+GET: /accounts/getAllAccounts
+
+GET: /accounts/getAccount/{accountnumber}
+
+GET: /accounts/getAllAccounts/{customerId}
+
+POST: /accounts/addAccount
+
+POST: /accounts/addAccount/{customerId}
+
+{
+        "accountNumber": "32633638970",
+        "accountName": "SBI",
+        "accountBalance": 65236.15,
+        "accountType": "SAVINGS"
+    }
+
+
+DELETE: /accounts/deleteAccount/{accountnumber}
+
+DELETE: /accounts/deleteAccount/{customerId}/{accountnumber}
+
+
+DELETE: /accounts/updateAccount
+
+
+
+===================================================
+
+GET: /creditcards/getAllCreditCards                         
+
+GET: /creditcards/getCreditCard/{cardNumber}
+
+POST: /creditcards/addCreditCard
+
+POST: /creditcards/addCreditCard/{customerId}
+{
+    "cardNumber": "425876987742",
+    "cardName": "MASTRO",
+    "cardType": "IRCTCPLATINUM",
+    "expiryDate": "2023-01-20",
+    "bankName": "SBI",
+    "cvv": 288,
+    "cardLimit": 20000.0,
+    "usedLimit": 0.0
+}
+GET: /creditcards/getAllCreditCards/{customerId}
+
+DELETE: /creditcards/deleteCreditCard/{cardNumber}
+
+DELETE: /creditcards/deleteCreditCard/{customerId}/{cardNumber}
+
+PUT: /creditcards/updateCreditCard
+
+
+=====================================================
+
+
+GET: /transactions/getAllTransactions
+
+GET: /transactions/getTransaction/{transactionId}
+
+POST: /transactions/addTransaction
+
+PUT: /transactions/updateTransaction
+
+GET: /transactions/transact/{cardNumber}/{amount}/{description}
+
+
+==================================================================
+
+
+
+GET: /statements/getAllStatements
+
+GET: /statements/getStatement/{statementId}
+
+POST: /statements/addStatement
+
+PUT: /statements/updateStatement
+
+GET: /statements/generateBill/{cardNumber}
+
+GET: /statements/generateUnBilled/{cardNumber}
+
+GET: /statements/statementHistory/{cardNumber}
+
+
+
+====================================================================
+
+
+GET: /payments/getAllPayments
+
+GET: /payments/getPayment/{paymentId}
+
+POST: /payments/addPayment
+
+GET: /payments/pendingBills/{cardNumber}
+
+POST: /payments/pendingBills/payUsingUPI/{statementId}
+
+POST: /payments/pendingBills/payUsingAccount/{statementId}/{accountNumber}
+
+GET: /payments/paymentHistory/{cardNumber}
